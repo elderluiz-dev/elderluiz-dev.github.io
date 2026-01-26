@@ -1,350 +1,245 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mastruz: A Planta Medicinal Poderosa</title>
+    <title>Athlas | Desenvolvedor Web</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Tailwind CSS para utilitários -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        matte: '#1A1A18',
+                        cream: '#ECE7C1',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <div class="loader">
-        <div class="loader-leaf"></div>
-        <div class="loader-text">Carregando conhecimento sobre o Mastruz...</div>
-    </div>
+<body class="selection:bg-cream selection:text-matte">
 
-    <header class="hero">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="MP_icon.jpg" alt="Logo Mastruz" class="logo-img">
-                <i class="fas fa-leaf"></i>
-                <span>Mastruz</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#benefits">Benefícios</a></li>
-                <li><a href="#uses">Usos</a></li>
-                <li><a href="#gallery">Galeria</a></li>
-                <li><a href="#science">Ciência</a></li>
-            </ul>
-            <div class="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-        </nav>
-
-        <div class="hero-content">
-            <h1 class="hero-title">Mastruz</h1>
-            <p class="hero-subtitle">Chenopodium ambrosioides</p>
-            <p class="hero-text">A planta medicinal poderosa da tradição popular</p>
-            <button class="hero-btn" id="explore-btn">Explorar <i class="fas fa-chevron-down"></i></button>
+    <!-- BARRA LATERAL (Desktop) -->
+    <aside class="fixed left-0 top-0 h-full w-24 hidden md:flex flex-col items-center z-50 border-r border-cream/10">
+        <div class="h-32 flex items-center justify-center">
+            <div class="w-1 h-12 bg-cream"></div>
         </div>
+        <div class="flex-1 flex flex-col justify-center gap-10">
+            <a href="https://github.com/oAthlas" target="_blank" class="hover:scale-125 transition-transform duration-300 opacity-60 hover:opacity-100">
+                <i data-lucide="github" class="w-6 h-6"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/elder-luiz-2842a5370/" target="_blank" class="hover:scale-125 transition-transform duration-300 opacity-60 hover:opacity-100">
+                <i data-lucide="linkedin" class="w-6 h-6"></i>
+            </a>
+        </div>
+        <div class="h-48 flex items-center justify-center">
+            <span class="vertical-text text-[10px] font-bold tracking-[0.3em] opacity-40 uppercase">
+                © 2026 ATHLAS DEVELOPER
+            </span>
+        </div>
+    </aside>
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full md:pl-24 p-8 flex justify-between items-center z-40 bg-matte/90 backdrop-blur-sm border-b border-cream/5">
+        <div class="md:hidden font-black tracking-tighter text-xl">A.</div>
+        <nav class="flex gap-8 md:gap-16 mx-auto md:mx-0">
+            <a href="#sobre" class="nav-link">Sobre mim</a>
+            <a href="#projetos" class="nav-link">Projetos</a>
+            <a href="#contato" class="nav-link">Contato</a>
+        </nav>
     </header>
 
-    <section class="about-section" id="about">
-        <div class="section-container">
-            <div class="about-content">
-                <h2 class="section-title">O Que é o Mastruz?</h2>
-                <p class="section-text">O mastruz (Chenopodium ambrosioides), também conhecido como erva-de-santa-maria ou mentruz, é uma planta medicinal pertencente à família Amaranthaceae. Originária das Américas, é amplamente utilizada na medicina tradicional em várias culturas.</p>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="md:pl-24">
+
+        <!-- SECTION: HERO -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center px-8 md:px-24 relative overflow-hidden">
+            <div class="relative z-10">
+                <div class="relative inline-block group">
+                    <h1 class="hero-title text-7xl sm:text-8xl md:text-[14rem] font-black mb-6">
+                        ATHLAS
+                    </h1>
+                    <div class="absolute -top-10 -left-10 w-24 h-24 border-l-2 border-t-2 border-cream/20 group-hover:w-32 group-hover:h-32 transition-all duration-700"></div>
+                </div>
+                <p class="text-lg md:text-2xl font-medium tracking-[0.3em] uppercase opacity-60 max-w-2xl">
+                    Desenvolvedor web e entusiasta de TI
+                </p>
+                <div class="mt-16">
+                    <a href="#projetos" class="inline-block px-10 py-4 border border-cream text-cream font-black uppercase tracking-widest hover:bg-cream hover:text-matte transition-all duration-300 heavy-shadow heavy-shadow-button">
+                        Ver Projetos
+                    </a>
+                </div>
+            </div>
+            <!-- Elemento decorativo de fundo -->
+            <div class="absolute right-0 bottom-0 opacity-[0.02] pointer-events-none select-none">
+                <h2 class="text-[30rem] font-black leading-none">CODE</h2>
+            </div>
+        </section>
+
+        <!-- SECTION: SOBRE -->
+        <section id="sobre" class="min-h-screen flex items-center px-8 md:px-24 bg-[#1E1E1C]">
+            <div class="max-w-5xl w-full">
+                <div class="flex items-center gap-6 mb-16">
+                    <div class="h-[2px] w-20 bg-cream"></div>
+                    <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter">Sobre mim</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <div class="space-y-8 text-lg opacity-80 leading-relaxed font-light">
+                        <p>
+                            Olá, sou <span class="font-bold text-cream opacity-100">Elder Luiz,</span> mais conhecido como <span class="font-bold text-cream opacity-100">Athlas</span>. Apaixonado por tecnologia, meu objetivo é projetar, construir e otimizar soluções digitais robustas e escaláveis.
+                        </p>
+                        <p>
+                            Como desenvolvedor focado em desenvolvimento web, especializo-me em entregar sites e soluções dos mais diversos tipos e complexidades, sempre com ênfase em desempenho, segurança e escalabilidade.
+                        </p>
+                        <div class="pt-4 flex gap-4">
+                            <div class="p-4 border border-cream/10 bg-matte heavy-shadow">
+                                <h4 class="text-3xl font-black">1+</h4>
+                                <p class="text-[10px] uppercase tracking-widest opacity-50">Anos de Experiência</p>
+                            </div>
+                            <div class="p-4 border border-cream/10 bg-matte heavy-shadow">
+                                <h4 class="text-3xl font-black">5+</h4>
+                                <p class="text-[10px] uppercase tracking-widest opacity-50">Projetos Entregues</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Skill Cards -->
+                        <div class="p-6 border border-cream/10 bg-matte hover:border-cream/40 transition-all group">
+                            <i data-lucide="server" class="w-6 h-6 mb-4 opacity-40 group-hover:opacity-100 transition-opacity"></i>
+                            <h3 class="font-bold text-sm uppercase tracking-wider mb-2">Backend</h3>
+                            <p class="text-xs opacity-50">Python, Django, Node.Js</p>
+                        </div>
+                        <div class="p-6 border border-cream/10 bg-matte hover:border-cream/40 transition-all group">
+                            <i data-lucide="database" class="w-6 h-6 mb-4 opacity-40 group-hover:opacity-100 transition-opacity"></i>
+                            <h3 class="font-bold text-sm uppercase tracking-wider mb-2">Data</h3>
+                            <p class="text-xs opacity-50">PostgreSQL, SQLite</p>
+                        </div>
+                        <div class="p-6 border border-cream/10 bg-matte hover:border-cream/40 transition-all group">
+                            <i data-lucide="terminal" class="w-6 h-6 mb-4 opacity-40 group-hover:opacity-100 transition-opacity"></i>
+                            <h3 class="font-bold text-sm uppercase tracking-wider mb-2">DevOps</h3>
+                            <p class="text-xs opacity-50">GitHub, Docker, Google Cloud</p>
+                        </div>
+                        <div class="p-6 border border-cream/10 bg-matte hover:border-cream/40 transition-all group">
+                            <i data-lucide="sparkles" class="w-6 h-6 mb-4 opacity-40 group-hover:opacity-100 transition-opacity"></i>
+                            <h3 class="font-bold text-sm uppercase tracking-wider mb-2">IA</h3>
+                            <p class="text-xs opacity-50">GPT, Copilot, Gemini</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: PROJETOS -->
+        <section id="projetos" class="min-h-screen py-32 px-8 md:px-24">
+            <div class="flex items-center justify-end gap-6 mb-20 text-right">
+                <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter">Projetos</h2>
+                <div class="h-[2px] w-20 bg-cream"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group relative bg-matte border border-cream/20 p-8 flex flex-col h-full hover:border-cream transition-all duration-500 heavy-shadow overflow-hidden">
+                    <div class="mb-6 flex gap-2">
+                        <span class="text-[10px] border border-cream/30 px-2 py-0.5 font-bold uppercase">Django</span>
+                        <span class="text-[10px] border border-cream/30 px-2 py-0.5 font-bold uppercase">PostgreSQL</span>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 group-hover:translate-x-2 transition-transform duration-300 uppercase">E-commerce</h3>
+                    <p class="text-sm opacity-60 leading-relaxed mb-8 flex-grow">
+                        E-commerce de alta performance construída em Django e banco de dados PostgreSQL.
+                    </p>
+                    <a href="https://bbordados.shop/" class="text-xs font-black uppercase tracking-[0.2em] border-t border-cream/10 pt-4 flex items-center justify-between group-hover:text-white">
+                        Explorar Projeto <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative bg-matte border border-cream/20 p-8 flex flex-col h-full hover:border-cream transition-all duration-500 heavy-shadow overflow-hidden">
+                    <div class="mb-6 flex gap-2">
+                        <span class="text-[10px] border border-cream/30 px-2 py-0.5 font-bold uppercase">Python</span>
+                        <span class="text-[10px] border border-cream/30 px-2 py-0.5 font-bold uppercase">OpenRouter</span>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 group-hover:translate-x-2 transition-transform duration-300 uppercase">Interface de LLM</h3>
+                    <p class="text-sm opacity-60 leading-relaxed mb-8 flex-grow">
+                        Programa simples de interface para modelos de linguagem grandes (LLMs) usando OpenRouter.
+                    </p>
+                    <a href="https://github.com/oAthlas/Lilie" class="text-xs font-black uppercase tracking-[0.2em] border-t border-cream/10 pt-4 flex items-center justify-between group-hover:text-white">
+                        Explorar Projeto <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative bg-matte border border-cream/20 p-8 flex flex-col h-full hover:border-cream transition-all duration-500 heavy-shadow overflow-hidden">
+                    <div class="mb-6 flex gap-2">
+                        <span class="text-[10px] border border-cream/30 px-2 py-0.5 font-bold uppercase">Django</span>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 group-hover:translate-x-2 transition-transform duration-300 uppercase">CRUD Básico</h3>
+                    <p class="text-sm opacity-60 leading-relaxed mb-8 flex-grow">
+                        CRUD básico implementado em Django com funcionalidades essenciais.
+                    </p>
+                    <a href="https://github.com/oAthlas/crud" class="text-xs font-black uppercase tracking-[0.2em] border-t border-cream/10 pt-4 flex items-center justify-between group-hover:text-white">
+                        Explorar Projeto <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CONTATO -->
+        <section id="contato" class="min-h-screen py-32 px-8 md:px-24 bg-[#1E1E1C]">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-5xl md:text-8xl font-black mb-8 uppercase tracking-tighter">Vamos Criar?</h2>
+                <p class="text-lg md:text-xl opacity-60 mb-16 max-w-2xl mx-auto leading-relaxed">
+                    Estou sempre aberto a novos projetos e oportunidades. 
+                    Se você precisa de uma solução completa para o seu neegócio, estou aqui.
+                </p>
                 
-                <div class="about-features">
-                    <div class="feature-card">
-                        <i class="fas fa-seedling"></i>
-                        <h3>Origem</h3>
-                        <p>Nativa das Américas, mas atualmente distribuída globalmente</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-ruler-combined"></i>
-                        <h3>Porte</h3>
-                        <p>Pode atingir até 1 metro de altura</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-calendar-alt"></i>
-                        <h3>Ciclo</h3>
-                        <p>Planta anual ou perene de curta duração</p>
-                    </div>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="mailto:elderluiz72@gmail.com" class="flex items-center justify-center gap-4 px-12 py-5 bg-cream text-matte font-black uppercase tracking-widest hover:brightness-110 transition-all heavy-shadow">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        Enviar E-mail
+                    </a>
                 </div>
-            </div>
-            <div class="about-image">
-                <img src="mastruz01.jpg" alt="Mastruz planta" class="plant-img">
-                <div class="image-overlay"></div>
-            </div>
-        </div>
-    </section>
 
-    <section class="benefits-section" id="benefits">
-        <div class="section-container">
-            <h2 class="section-title">Benefícios do Mastruz</h2>
-            <p class="section-subtitle">Conheça as propriedades medicinais desta incrível planta</p>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-bug"></i>
+                <div class="mt-32 pt-16 border-t border-cream/5 flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div class="text-left">
+                        <p class="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 mb-2">Localização</p>
+                        <p class="text-sm font-bold">Guanambi - Bahia, Brazil (Remoto)</p>
                     </div>
-                    <h3>Vermífugo</h3>
-                    <p>Eficaz contra diversos parasitas intestinais</p>
-                    <div class="benefit-wave"></div>
-                    <div class="benefit-extra">
-                        <p>O mastruz é tradicionalmente usado para eliminar vermes intestinais, especialmente Ascaris lumbricoides. Seu princípio ativo, o ascaridol, atua paralisando e eliminando os parasitas. Recomenda-se cautela no uso, principalmente em crianças.</p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-lungs"></i>
-                    </div>
-                    <h3>Expectorante</h3>
-                    <p>Ajuda no tratamento de problemas respiratórios</p>
-                    <div class="benefit-wave"></div>
-                    <div class="benefit-extra">
-                        <p>O chá ou xarope de mastruz auxilia na eliminação de secreções pulmonares, sendo útil em casos de bronquite, tosse e congestão. Seu uso deve ser moderado e preferencialmente sob orientação.</p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-bacterium"></i>
-                    </div>
-                    <h3>Antimicrobiano</h3>
-                    <p>Atividade contra bactérias e fungos</p>
-                    <div class="benefit-wave"></div>
-                    <div class="benefit-extra">
-                        <p>Estudos mostram que o mastruz possui compostos capazes de inibir o crescimento de bactérias e fungos, sendo útil em infecções leves e no tratamento de feridas.</p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h3>Anti-inflamatório</h3>
-                    <p>Reduz inflamações e dores musculares</p>
-                    <div class="benefit-wave"></div>
-                    <div class="benefit-extra">
-                        <p>O uso tópico ou oral do mastruz pode ajudar a aliviar inflamações, dores musculares e articulares, graças à presença de flavonoides e outros compostos bioativos.</p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>Digestivo</h3>
-                    <p>Auxilia na digestão e problemas estomacais</p>
-                    <div class="benefit-wave"></div>
-                    <div class="benefit-extra">
-                        <p>O mastruz estimula a produção de sucos gástricos, aliviando sintomas de má digestão, gases e desconfortos abdominais. Seu uso deve ser feito em pequenas quantidades.</p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-band-aid"></i>
-                    </div>
-                    <h3>Cicatrizante</h3>
-                    <p>Acelera a cicatrização de feridas</p>
-                    <div class="benefit-wave"></div>
-                    <div class="benefit-extra">
-                        <p>Aplicado sobre feridas, o mastruz favorece a regeneração da pele e previne infecções, sendo um aliado natural no tratamento de cortes e machucados superficiais.</p>
+                    <div class="text-left md:text-right">
+                        <p class="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 mb-2">Status atual</p>
+                        <p class="text-sm font-bold flex items-center gap-2">
+                            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                            Disponível para novos projetos
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="uses-section" id="uses">
-        <div class="section-container">
-            <div class="uses-image">
-                <img src="mastruz02.jpg" alt="Uso do mastruz" class="plant-img">
-                <div class="image-overlay"></div>
+        <!-- FOOTER MOBILE -->
+        <footer class="md:hidden p-12 border-t border-cream/10 text-center">
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="#"><i data-lucide="github" class="w-6 h-6"></i></a>
+                <a href="#"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
             </div>
-            <div class="uses-content">
-                <h2 class="section-title">Como Usar o Mastruz</h2>
-                
-                <div class="uses-accordion">
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>Chá de Mastruz</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="accordion-content">
-                            <p>Para preparar o chá, utilize 1 colher de sopa de folhas frescas ou secas para cada litro de água. Ferva a água, adicione as folhas e deixe em infusão por 5-10 minutos. Coe e beba até 3 xícaras ao dia.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>Uso Tópico</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="accordion-content">
-                            <p>Para feridas e inflamações na pele, amasse folhas frescas e aplique diretamente no local afetado. Também pode ser usado como compressa com o chá concentrado.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>Xarope Natural</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="accordion-content">
-                            <p>Misture o suco das folhas com mel em proporção 1:1. Tome 1 colher de sopa 3 vezes ao dia para tosse e problemas respiratórios.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>Óleo Essencial</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="accordion-content">
-                            <p>O óleo de mastruz (contendo ascaridol) deve ser usado com extrema cautela e diluição, apenas sob orientação profissional.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <p class="text-[10px] font-black tracking-[0.3em] opacity-40">© 2026 ATHLAS DEVELOPER</p>
+        </footer>
 
-    <section class="gallery-section" id="gallery">
-        <div class="section-container">
-            <h2 class="section-title">Galeria do Mastruz</h2>
-            <p class="section-subtitle">Conheça a beleza e características desta planta</p>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="mastruz03.jpg" alt="Mastruz planta inteira">
-                    <div class="gallery-overlay">
-                        <h3>Planta Adulta</h3>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="mastruz04.jpg" alt="Folhas de mastruz">
-                    <div class="gallery-overlay">
-                        <h3>Folhas Detalhadas</h3>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="mastruz05.jpg" alt="Flores de mastruz">
-                    <div class="gallery-overlay">
-                        <h3>Sementes</h3>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="mastruz06.jpg" alt="Chá de mastruz">
-                    <div class="gallery-overlay">
-                        <h3>Preparação Medicinal</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="science-section" id="science">
-        <div class="section-container">
-            <h2 class="section-title">Mastruz na Ciência</h2>
-            <p class="section-subtitle">O que dizem as pesquisas científicas</p>
-            
-            <div class="science-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2020</div>
-                    <div class="timeline-content">
-                        <h3>Atividade Antimicrobiana</h3>
-                        <p>Estudo publicado no Journal of Ethnopharmacology comprovou a eficácia do extrato de mastruz contra várias cepas bacterianas, incluindo Staphylococcus aureus.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2018</div>
-                    <div class="timeline-content">
-                        <h3>Efeito Anti-helmíntico</h3>
-                        <p>Pesquisa brasileira confirmou a ação vermífuga do mastruz, especialmente contra Ascaris lumbricoides, comprovando o uso tradicional.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2016</div>
-                    <div class="timeline-content">
-                        <h3>Potencial Anticancerígeno</h3>
-                        <p>Estudos preliminares indicam que compostos do mastruz podem inibir o crescimento de certas células cancerígenas, abrindo caminho para novas pesquisas.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2014</div>
-                    <div class="timeline-content">
-                        <h3>Segurança e Toxicidade</h3>
-                        <p>Pesquisas alertam para o uso moderado, especialmente do óleo essencial, que em altas doses pode ser tóxico para o fígado e sistema nervoso.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="precautions-section">
-        <div class="section-container">
-            <h2 class="section-title">Precauções e Contraindicações</h2>
-            
-            <div class="precautions-content">
-                <div class="precaution-card warning">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <h3>Grávidas</h3>
-                    <p>O mastruz é contraindicado durante a gravidez, pois pode estimular contrações uterinas.</p>
-                </div>
-                <div class="precaution-card warning">
-                    <i class="fas fa-child"></i>
-                    <h3>Crianças</h3>
-                    <p>Uso em crianças pequenas deve ser feito com cautela e sob orientação médica.</p>
-                </div>
-                <div class="precaution-card warning">
-                    <i class="fas fa-pills"></i>
-                    <h3>Interações</h3>
-                    <p>Pode interagir com medicamentos anticoagulantes e sedativos.</p>
-                </div>
-                <div class="precaution-card tip">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Dosagem</h3>
-                    <p>Sempre utilize nas dosagens recomendadas e por períodos limitados.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-about">
-                <div class="logo">
-                    <i class="fas fa-leaf"></i>
-                    <span>Mastruz</span>
-                </div>
-                <p>Este site foi criado como parte de um  projeto de iniciação científica, com o objetivo de informar sobre a planta mastruz (Dysphania ambrosioides). Buscamos destacar seus benefícios medicinais e alertar sobre o uso adequado, promovendo a conscientização e o acesso a informações confiáveis .</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h3>Links Rápidos</h3>
-                <ul>
-                    <li><a href="#about">Sobre o Mastruz</a></li>
-                    <li><a href="#benefits">Benefícios</a></li>
-                    <li><a href="#uses">Como Usar</a></li>
-                    <li><a href="#gallery">Galeria</a></li>
-                    <li><a href="#science">Pesquisas</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contato</h3>
-                <p><i class="fas fa-envelope"></i> mastruzparatodos@gmail.com</p>
-                <p><i class="fas fa-school"></i> Colégio Modelo Luis Eduardo Magalhães</p>
-                <p><i class="fas fa-user-graduate"></i> Alunos: Luiz Eduardo, Rafael Fraga e Ederson</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Feira de Ciências - Todos os direitos reservados</p>
-            <p>Site desenvolvido com HTML, CSS, JavaScript e GSAP</p>
-        </div>
-    </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>
