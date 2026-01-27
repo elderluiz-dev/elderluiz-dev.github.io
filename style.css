@@ -1,7 +1,7 @@
 /* Custom Color Theme */
 :root {
-    --color-matte: #1A1A18;
-    --color-cream: #ECE7C1;
+    --color-matte: #000000;
+    --color-cream: #ffffff;
 }
 
 body {
