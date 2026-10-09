@@ -1,247 +1,226 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elder | Desenvolvedor</title>
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Tailwind CSS para utilitários -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        matte: '#000000',
-                        cream: '#ffffff',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Elder Luiz, estudante de Análise e Desenvolvimento de Sistemas com interesse em C, sistemas operacionais e infraestrutura Linux.">
+  <meta name="author" content="Elder Luiz">
+  <meta name="theme-color" content="#0a0d12">
+  <title>Elder Luiz | Sistemas e Infraestrutura</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="selection:bg-cream selection:text-matte">
 
-    <!-- BARRA LATERAL (Desktop) -->
-    <aside class="fixed left-0 top-0 h-full w-24 hidden md:flex flex-col items-center z-50 border-r border-cream/10">
-        <div class="h-32 flex items-center justify-center">
-            <div class="w-1 h-12 bg-cream"></div>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Elder Luiz — início">
+      <span class="brand-mark" aria-hidden="true">🜲</span>
+      <span>Elder Luiz<span class="brand-dot">.</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+
+  <!-- MAIN -->
+  <main id="conteudo">
+
+
+    <!-- HERO -->
+    <section class="hero section-shell" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Estudante de ADS · Guanambi, BA</p>
+        <h1 id="hero-title">Entendendo os sistemas <span>de baixo para cima.</span></h1>
+        <p class="hero-lead">
+          Sou Elder Luiz, estudante de Análise e Desenvolvimento de Sistemas.
+          Tenho explorado programação em C, sistemas operacion11ais e o funcionamento
+          interno do Linux.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projetos">Explorar projetos <span aria-hidden="true">↘</span></a>
+          <a class="button button-quiet" href="#contato">Entrar em contato</a>
         </div>
-        <div class="flex-1 flex flex-col justify-center gap-10">
-            <a href="https://github.com/oAthlas" target="_blank" class="hover:scale-125 transition-transform duration-300 opacity-60 hover:opacity-100">
-                <i data-lucide="github" class="w-6 h-6"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/elder-luiz-2842a5370/" target="_blank" class="hover:scale-125 transition-transform duration-300 opacity-60 hover:opacity-100">
-                <i data-lucide="linkedin" class="w-6 h-6"></i>
-            </a>
+        <ul class="hero-facts" aria-label="Áreas de interesse">
+          <li>C / POSIX</li>
+          <li>Linux</li>
+          <li>Infraestrutura</li>
+        </ul>
+      </div>
+      <div class="hero-visual">
+        <div class="portrait-frame">
+          <img src="assets/profile.jpeg" alt="Ilustração provisória de perfil; substitua por uma fotografia sua">
+          <span class="portrait-tag">curiosidade em construção<span aria-hidden="true">_</span></span>
         </div>
-        <div class="h-48 flex items-center justify-center">
-            <span class="vertical-text text-[10px] font-bold tracking-[0.3em] opacity-40 uppercase">
-                © 2026 ELDER DEVELOPER
-            </span>
+        <div class="terminal-card" aria-label="Exemplo de terminal Linux">
+          <div class="terminal-bar"><span></span><span></span><span></span><small>athlas@linux</small></div>
+          <p><span class="terminal-prompt">$</span> uname -s</p>
+          <p class="terminal-output">Linux</p>
+          <p><span class="terminal-prompt">$</span> printf "hello, systems"</p>
+          <p class="terminal-output">hello, systems</p>
         </div>
-    </aside>
+      </div>
+      <a class="scroll-cue" href="#sobre" aria-label="Ir para a seção Sobre">↓ <span>Role para explorar</span></a>
+    </section>
 
-    <!-- HEADER -->
-    <header class="fixed top-0 left-0 w-full md:pl-24 p-8 flex justify-between items-center z-40 bg-matte/90 backdrop-blur-sm border-b border-cream/5">
-        <div class="md:hidden font-black tracking-tighter text-xl">E.</div>
-        <nav class="flex gap-8 md:gap-16 mx-auto md:mx-0">
-            <a href="#sobre" class="nav-link">Sobre mim</a>
-            <a href="#projetos" class="nav-link">Projetos</a>
-            <a href="#contato" class="nav-link">Contato</a>
-        </nav>
-    </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main class="md:pl-24">
+    <!-- SOBRE MIM -->
+    <section class="section-shell about-section" id="sobre" aria-labelledby="about-title">
+      <div class="section-heading">
+        <p class="eyebrow">Sobre mim</p>
+        <h2 id="about-title">Aprender como as coisas <span>funcionam.</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Curso <strong>Análise e Desenvolvimento de Sistemas no IF Baiano</strong>.
+            Minha trajetória começou com desenvolvimento de aplicações web, mas meu interesse
+            atual está cada vez mais próximo da base que sustenta os programas: processos,
+            memória, chamadas de sistema e comunicação entre máquinas.
+          </p>
+          <p>
+            Gosto de estudar construindo: escrever código, fazer consultas, observar
+            o comportamento do sistema e investigar erros em vez de apenas esconder seus sintomas.
+          </p>
+          <p class="note-line"><span aria-hidden="true">↳</span> Objetivo atual: aprofundar fundamentos de Linux, C/POSIX e infraestrutura.</p>
+        </div>
+        <aside class="education-card" aria-label="Formação acadêmica">
+          <span class="card-index">FORMAÇÃO</span>
+          <div class="education-icon" aria-hidden="true">⃟</div>
+          <h3>Análise e Desenvolvimento de Sistemas</h3>
+          <p>Instituto Federal Baiano - Campus Guanambi</p>
+          <span class="education-status">Em andamento</span>
+        </aside>
+      </div>
+    </section>
 
-        <!-- SECTION: HERO -->
-        <section id="hero" class="min-h-screen flex flex-col justify-center px-8 md:px-24 relative overflow-hidden">
-            <div class="relative z-10">
-                <div class="relative inline-block group">
-                    <h1 class="hero-title text-7xl sm:text-8xl md:text-[14rem] font-black mb-6">
-                        ELDER
-                    </h1>
-                    <div class="absolute -top-10 -left-10 w-24 h-24 border-l-2 border-t-2 border-cream/20 group-hover:w-32 group-hover:h-32 transition-all duration-700"></div>
-                </div>
-                <p class="text-lg md:text-2xl font-medium tracking-[0.3em] uppercase opacity-60 max-w-2xl">
-                    Desenvolvedor web e entusiasta de TI
-                </p>
-                <div class="mt-16">
-                    <a href="#projetos" class="inline-block px-10 py-4 border border-cream text-cream font-black uppercase tracking-widest hover:bg-cream hover:text-matte transition-all duration-300 heavy-shadow heavy-shadow-button">
-                        Ver Projetos
-                    </a>
-                </div>
-            </div>
-            <!-- Elemento decorativo de fundo -->
-            <div class="absolute right-0 bottom-0 opacity-[0.02] pointer-events-none select-none">
-                <h2 class="text-[30rem] font-black leading-none">CODE</h2>
-            </div>
-        </section>
 
-        <!-- SECTION: SOBRE -->
-        <section id="sobre" class="min-h-screen flex items-center px-8 md:px-24 bg-[#1E1E1C]">
-            <div class="max-w-5xl w-full">
-                <div class="flex items-center gap-6 mb-16">
-                    <div class="h-[2px] w-20 bg-cream"></div>
-                    <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter">Sobre mim</h2>
-                </div>
-                <div class="grid md:grid-cols-2 gap-16 items-start">
-                    <div class="space-y-8 text-lg opacity-80 leading-relaxed font-light">
-                        <p>
-                            Olá, eu sou <span class="font-bold text-cream opacity-100">Elder Luiz.</span> Apaixonado por tecnologia, meu objetivo é projetar, construir e otimizar soluções digitais robustas e escaláveis.
-                        </p>
-                        <p>
-                            Como desenvolvedor focado em desenvolvimento web e automações, especializo-me em entregar sites e soluções dos mais diversos tipos e complexidades, sempre com ênfase em desempenho e escalabilidade.
-                        </p>
-                        <div class="pt-4 flex gap-4">
-                            <div class="p-4 border border-cream/10 bg-matte heavy-shadow">
-                                <h4 class="text-3xl font-black">1+</h4>
-                                <p class="text-[10px] uppercase tracking-widest opacity-50">Anos de Experiência</p>
-                            </div>
-                            <div class="p-4 border border-cream/10 bg-matte heavy-shadow">
-                                <h4 class="text-3xl font-black">5+</h4>
-                                <p class="text-[10px] uppercase tracking-widest opacity-50">Projetos Finalizados</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <!-- Skill Cards -->
-                        <div class="p-6 border border-cream/10 bg-matte hover:border-cream/40 transition-all group">
-                            <i data-lucide="server" class="w-6 h-6 mb-4 opacity-40 group-hover:opacity-100 transition-opacity"></i>
-                            <h3 class="font-bold text-sm uppercase tracking-wider mb-2">Backend</h3>
-                            <p class="text-xs opacity-50">Python, Django, Flask</p>
-                        </div>
-                        <div class="p-6 border border-cream/10 bg-matte hover:border-cream/40 transition-all group">
-                            <i data-lucide="database" class="w-6 h-6 mb-4 opacity-40 group-hover:opacity-100 transition-opacity"></i>
-                            <h3 class="font-bold text-sm uppercase tracking-wider mb-2">Data</h3>
-                            <p class="text-xs opacity-50">PostgreSQL, SQLite</p>
-                        </div>
-                        <div class="p-6 border border-cream/10 bg-matte hover:border-cream/40 transition-all group">
-                            <i data-lucide="terminal" class="w-6 h-6 mb-4 opacity-40 group-hover:opacity-100 transition-opacity"></i>
-                            <h3 class="font-bold text-sm uppercase tracking-wider mb-2">DevOps</h3>
-                            <p class="text-xs opacity-50">GitHub, Google Cloud</p>
-                        </div>
-                        <div class="p-6 border border-cream/10 bg-matte hover:border-cream/40 transition-all group">
-                            <i data-lucide="sparkles" class="w-6 h-6 mb-4 opacity-40 group-hover:opacity-100 transition-opacity"></i>
-                            <h3 class="font-bold text-sm uppercase tracking-wider mb-2">IA</h3>
-                            <p class="text-xs opacity-50">GPT, Copilot, Gemini</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- MEUS PROJETOS -->
+    <section class="section-shell projects-section" id="projetos" aria-labelledby="projects-title">
+      <div class="section-heading heading-with-note">
+        <div>
+          <p class="eyebrow">Laboratório</p>
+          <h2 id="projects-title">Projetos<span>.</span></h2>
+        </div>
+        <p class="section-note">Projetos de estudo, experimentos e código em evolução.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card project-featured">
+          <div class="project-content">
+            <div class="project-meta"><span>01 — Sistemas operacionais</span><span>2026</span></div>
+            <h3>Simulador de escalonamento de processos</h3>
+            <p>Simulador em C com interface de terminal para estudar políticas de escalonamento como FCFS, SJF, Round Robin e prioridade.</p>
+            <ul class="tag-list" aria-label="Tecnologias"><li>C</li><li>GCC</li><li>Make</li></ul>
+            <a class="text-link" href="https://github.com/elderluiz-dev/ProjetoEscalonamentoSO" target="_blank" rel="noopener noreferrer">Ver código no GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
 
-        <!-- SECTION: PROJETOS -->
-        <section id="projetos" class="min-h-screen py-32 px-8 md:px-24">
-            <div class="flex items-center justify-end gap-6 mb-20 text-right">
-                <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter">Projetos</h2>
-                <div class="h-[2px] w-20 bg-cream"></div>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="group relative bg-matte border border-cream/20 p-8 flex flex-col h-full hover:border-cream transition-all duration-500 heavy-shadow overflow-hidden">
-                    <div class="mb-6 flex gap-2">
-                        <span class="text-[10px] border border-cream/30 px-2 py-0.5 font-bold uppercase">Django</span>
-                        <span class="text-[10px] border border-cream/30 px-2 py-0.5 font-bold uppercase">PostgreSQL</span>
-                    </div>
-                    <h3 class="text-2xl font-black mb-4 group-hover:translate-x-2 transition-transform duration-300 uppercase">B-Bordados</h3>
-                    <p class="text-sm opacity-60 leading-relaxed mb-8 flex-grow">
-                        E-commerce de alta performance construída em Django e banco de dados PostgreSQL.
-                    </p>
-                    <a href="https://bbordados.shop/" class="text-xs font-black uppercase tracking-[0.2em] border-t border-cream/10 pt-4 flex items-center justify-between group-hover:text-white">
-                        Explorar Projeto <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
+        <article class="project-card">
+          <div class="project-content">
+            <div class="project-meta"><span>02 — Linux / C</span><span>2026</span></div>
+            <h3>Monitor de informações do sistema</h3>
+            <p>Experimento em C que consulta interfaces do Linux, como <code>/proc</code> e <code>uname</code>, para exibir informações do sistema.</p>
+            <ul class="tag-list" aria-label="Tecnologias"><li>C</li><li>Linux</li><li>/proc</li></ul>
+            <a class="text-link" href="https://github.com/elderluiz-dev/system-monitor" target="_blank" rel="noopener noreferrer">Explorar repositórios <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
 
-                <!-- Project 2 -->
-                <div class="group relative bg-matte border border-cream/20 p-8 flex flex-col h-full hover:border-cream transition-all duration-500 heavy-shadow overflow-hidden">
-                    <div class="mb-6 flex gap-2">
-                        <span class="text-[10px] border border-cream/30 px-2 py-0.5 font-bold uppercase">Flask</span>
-                        <span class="text-[10px] border border-cream/30 px-2 py-0.5 font-bold uppercase">SQLite</span>
-                    </div>
-                    <h3 class="text-2xl font-black mb-4 group-hover:translate-x-2 transition-transform duration-300 uppercase">Cephalon Delta</h3>
-                    <p class="text-sm opacity-60 leading-relaxed mb-8 flex-grow">
-                        Aplicação web para gerenciamento de coleções Prime do Warframe, com acompanhamento de progresso e inventário de peças.
-                    </p>
-                    <a href="https://github.com/elderluiz-dev/Cephalon-Delta" class="text-xs font-black uppercase tracking-[0.2em] border-t border-cream/10 pt-4 flex items-center justify-between group-hover:text-white">
-                        Explorar Projeto <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
+        <article class="project-card">
+          <div class="project-content">
+            <div class="project-meta"><span>03 — Ambiente Linux</span><span>2026</span></div>
+            <h3>Configuração pessoal do Arch Linux</h3>
+            <p>Arquivos de configuração e personalização do ambiente de trabalho, organizados para documentar e reproduzir o setup.</p>
+            <ul class="tag-list" aria-label="Tecnologias"><li>Arch Linux</li><li>Hyprland</li><li>Shell</li></ul>
+            <a class="text-link" href="https://github.com/elderluiz-dev/arch-dotfiles" target="_blank" rel="noopener noreferrer">Ver dotfiles <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+      <p class="content-disclaimer">Os projetos e suas descrições devem refletir o que está implementado de fato. Atualize os links e o estágio de cada projeto antes da entrega.</p>
+    </section>
 
-                <!-- Project 3 -->
-                <div class="group relative bg-matte border border-cream/20 p-8 flex flex-col h-full hover:border-cream transition-all duration-500 heavy-shadow overflow-hidden">
-                    <div class="mb-6 flex gap-2">
-                        <span class="text-[10px] border border-cream/30 px-2 py-0.5 font-bold uppercase">Python</span>
-                        <span class="text-[10px] border border-cream/30 px-2 py-0.5 font-bold uppercase">Google GenAI</span>
-                    </div>
-                    <h3 class="text-2xl font-black mb-4 group-hover:translate-x-2 transition-transform duration-300 uppercase">Newsletter Agent</h3>
-                    <p class="text-sm opacity-60 leading-relaxed mb-8 flex-grow">
-                        Agente de newsletters que resume newsletters usando Google GenAI e as envia por e-mail usando SMTP.
-                    </p>
-                    <a href="https://github.com/elderluiz-dev/newsletter-agent" class="text-xs font-black uppercase tracking-[0.2em] border-t border-cream/10 pt-4 flex items-center justify-between group-hover:text-white">
-                        Explorar Projeto <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
 
-        <!-- SECTION: CONTATO -->
-        <section id="contato" class="min-h-screen py-32 px-8 md:px-24 bg-[#1E1E1C]">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-5xl md:text-8xl font-black mb-8 uppercase tracking-tighter">Vamos Criar?</h2>
-                <p class="text-lg md:text-xl opacity-60 mb-16 max-w-2xl mx-auto leading-relaxed">
-                    Estou sempre aberto a novos projetos e oportunidades. 
-                    Se você precisa de uma solução completa para o seu neegócio, estou aqui.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="mailto:elderluiz72@gmail.com" class="flex items-center justify-center gap-4 px-12 py-5 bg-cream text-matte font-black uppercase tracking-widest hover:brightness-110 transition-all heavy-shadow">
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                        Enviar E-mail
-                    </a>
-                </div>
+    <!-- MINHAS SKILLS -->
+    <section class="section-shell skills-section" id="habilidades" aria-labelledby="skills-title">
+      <div class="section-heading">
+        <p class="eyebrow">Caixa de ferramentas</p>
+        <h2 id="skills-title">Habilidades em desenvolvimento<span>.</span></h2>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card">
+          <span class="skill-number">01</span>
+          <h3>Programação</h3>
+          <p>Construir uma base sólida e entender o comportamento do código.</p>
+          <ul><li>C e fundamentos de memória</li><li>Estruturas de dados</li><li>Git e Makefile</li></ul>
+        </article>
+        <article class="skill-card">
+          <span class="skill-number">02</span>
+          <h3>Sistemas e Linux</h3>
+          <p>Explorar o sistema operacional por meio de observação e experimentos.</p>
+          <ul><li>Linux e Bash</li><li>Processos e escalonamento</li><li>Interfaces de /proc</li></ul>
+        </article>
+        <article class="skill-card">
+          <span class="skill-number">03</span>
+          <h3>Desenvolvimento web</h3>
+          <p>Conhecimentos prévios que ajudam a construir ferramentas e serviços.</p>
+          <ul><li>HTML e CSS</li><li>Python / Django / Flask</li><li>SQL e PostgreSQL</li></ul>
+        </article>
+      </div>
+    </section>
 
-                <div class="mt-32 pt-16 border-t border-cream/5 flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div class="text-left">
-                        <p class="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 mb-2">Localização</p>
-                        <p class="text-sm font-bold">Guanambi - Bahia, Brazil (Remoto)</p>
-                    </div>
-                    <div class="text-left md:text-right">
-                        <p class="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 mb-2">Status atual</p>
-                        <p class="text-sm font-bold flex items-center gap-2">
-                            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                            Disponível para novos projetos
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- FOOTER MOBILE -->
-        <footer class="md:hidden p-12 border-t border-cream/10 text-center">
-            <div class="flex justify-center gap-8 mb-8">
-                <a href="#"><i data-lucide="github" class="w-6 h-6"></i></a>
-                <a href="#"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-            </div>
-            <p class="text-[10px] font-black tracking-[0.3em] opacity-40">© 2026 ATHLAS DEVELOPER</p>
-        </footer>
+    <!-- MEUS CONTATOS -->
+    <section class="contact-section" id="contato" aria-labelledby="contact-title">
+      <div class="section-shell contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">Vamos conversar</p>
+          <h2 id="contact-title">Uma boa conversa começa com uma pergunta<span>.</span></h2>
+          <p>Entre em contato para falar sobre projetos, estudos ou oportunidades relacionadas a desenvolvimento e infraestrutura.</p>
+          <div class="contact-links">
+            <a href="mailto:elderluiz72@gmail.com">elderluiz72@gmail.com <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/elderluiz-dev" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://www.linkedin.com/in/elder-luiz-2842a5370/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <form class="contact-form" action="mailto:elderluiz72@gmail.com" method="post" enctype="text/plain">
+          <p class="form-heading">Envie uma mensagem</p>
+          <div class="form-field">
+            <label for="nome">Nome <span aria-hidden="true">*</span></label>
+            <input id="nome" name="Nome" type="text" autocomplete="name" placeholder="Seu nome" required minlength="2">
+            <small class="field-hint">Informe pelo menos 2 caracteres.</small>
+          </div>
+          <div class="form-field">
+            <label for="email">E-mail <span aria-hidden="true">*</span></label>
+            <input id="email" name="E-mail" type="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+            <small class="field-hint">Use um endereço de e-mail válido.</small>
+          </div>
+          <div class="form-field">
+            <label for="assunto">Assunto</label>
+            <input id="assunto" name="Assunto" type="text" placeholder="Sobre o que deseja conversar?">
+          </div>
+          <div class="form-field">
+            <label for="mensagem">Mensagem <span aria-hidden="true">*</span></label>
+            <textarea id="mensagem" name="Mensagem" rows="4" placeholder="Escreva sua mensagem..." required minlength="10"></textarea>
+            <small class="field-hint">A mensagem deve ter pelo menos 10 caracteres.</small>
+          </div>
+          <button class="button button-primary submit-button" type="submit">Preparar e-mail <span aria-hidden="true">↗</span></button>
+          <p class="form-note">O envio usa o aplicativo de e-mail configurado no seu dispositivo. A validação dos campos é feita pelo navegador.</p>
+        </form>
+      </div>
+    </section>
+  </main>
 
-    </main>
 
-    <script src="script.js"></script>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <a class="footer-brand" href="#inicio">🜲</a>
+    <p>Elder Luiz · 2026</p>
+    <a href="#inicio">Voltar ao topo ↑</a>
+  </footer>
 </body>
 </html>
