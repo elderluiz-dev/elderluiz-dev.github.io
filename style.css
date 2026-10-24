@@ -305,7 +305,7 @@ section.section-shell:not(.hero) {
   overflow: hidden;
   border: 1px solid var(--borda);
   background: var(--card);
-  filter: grayscale(1);
+  filter: grayscale(0);
 }
 
 .portrait-frame img {
