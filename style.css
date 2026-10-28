@@ -192,11 +192,6 @@ section.section-shell:not(.hero) {
   gap: 1.5rem;
 }
 
-.section-note {
-  color: var(--texto-fraco);
-  font-size: 0.85rem;
-}
-
 /* Apresentação */
 .hero {
   position: relative;
@@ -391,8 +386,7 @@ section.section-shell:not(.hero) {
 }
 
 .card-index,
-.project-meta,
-.skill-number {
+.project-meta {
   color: var(--texto-fraco);
   font-family: var(--mono);
   font-size: 0.68rem;
@@ -522,10 +516,6 @@ section.section-shell:not(.hero) {
 
 .skill-card:hover {
   border-color: #555;
-}
-
-.skill-number {
-  color: var(--texto-fraco);
 }
 
 .skill-card h3 {
