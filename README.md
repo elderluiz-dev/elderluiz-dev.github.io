@@ -10,7 +10,6 @@ Portfólio pessoal desenvolvido para a disciplina de Interface Homem-Máquina, c
 - Variáveis CSS
 - Media queries para responsividade
 - Transições e animações CSS
-- Validação nativa de formulários HTML (`required`, `type="email"`, `minlength` e `:user-invalid`)
 
 ## Estrutura
 
@@ -21,13 +20,9 @@ portfolio/
 ├── README.md
 └── assets/
     ├── favicon.ico
-    └── profile.svg
+    └── profile.jpeg
 ```
-
-## Acessibilidade e design
-
-O projeto usa landmarks semânticos, títulos hierárquicos, rótulos explícitos nos campos, foco visível, link para pular a navegação e uma regra `prefers-reduced-motion`. O layout usa Grid para a organização principal e Flexbox para alinhamento de componentes.
 
 ## Link do site publicado
 
-[Portfólio - Elder Luiz | ADS](https://elderluiz-dev.github.io/)
+[Portfólio - Elder Luiz](https://elderluiz-dev.github.io/)
