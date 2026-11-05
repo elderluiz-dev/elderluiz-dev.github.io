@@ -1,10 +1,10 @@
+/* BASE */
 :root {
   --fundo: #0a0a0a;
   --texto: #e8e8e8;
   --texto-fraco: #888;
   --borda: #222;
   --card: #111;
-  --destaque: #e8e8e8;
   --mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
   --sans: "Plus Jakarta Sans", system-ui, sans-serif;
   --largura: 1120px;
@@ -18,7 +18,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
 }
 
 body {
@@ -59,76 +58,10 @@ textarea:focus-visible {
   background: var(--texto);
   color: var(--fundo);
 }
+/*-----------------------------------------------------*/
 
-.skip-link {
-  position: fixed;
-  z-index: 10;
-  top: 1rem;
-  left: 1rem;
-  padding: 0.6rem 1rem;
-  background: var(--texto);
-  color: var(--fundo);
-  transform: translateY(-180%);
-}
 
-.skip-link:focus {
-  transform: translateY(0);
-}
-
-/* Cabeçalho */
-.site-header {
-  max-width: var(--largura);
-  min-height: 78px;
-  margin: 0 auto 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  border-bottom: 1px solid var(--borda);
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-}
-
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  font-family: var(--mono);
-  font-size: 1rem;
-}
-
-.section-heading h2 span,
-.contact-copy h2 span {
-  color: var(--texto-fraco);
-}
-
-.main-nav {
-  display: flex;
-  gap: 1.8rem;
-}
-
-.main-nav a,
-.site-footer a:last-child {
-  color: var(--texto-fraco);
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  transition: color 160ms ease;
-}
-
-.main-nav a:hover,
-.site-footer a:last-child:hover {
-  color: var(--texto);
-}
-
-/* Tipografia e estrutura */
+/* ESTRUTURA */
 .section-shell {
   width: min(100%, var(--largura));
   margin-inline: auto;
@@ -191,8 +124,65 @@ section.section-shell:not(.hero) {
   justify-content: space-between;
   gap: 1.5rem;
 }
+/*-----------------------------------------------------*/
 
-/* Apresentação */
+
+/* CABEÇALHO */
+.site-header {
+  max-width: var(--largura);
+  min-height: 78px;
+  margin: 0 auto 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  border-bottom: 1px solid var(--borda);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  font-family: var(--mono);
+  font-size: 1rem;
+}
+
+.section-heading h2 span,
+.contact-copy h2 span {
+  color: var(--texto-fraco);
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.main-nav a,
+.site-footer a:last-child {
+  color: var(--texto-fraco);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  transition: color 160ms ease;
+}
+
+.main-nav a:hover,
+.site-footer a:last-child:hover {
+  color: var(--texto);
+}
+/*-----------------------------------------------------*/
+
+
+/* APRESENTAÇÃO */
 .hero {
   position: relative;
   min-height: 490px;
@@ -326,27 +316,13 @@ section.section-shell:not(.hero) {
   color: var(--texto);
 }
 
-.terminal-card {
-  display: none;
-}
-
-.scroll-cue {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  color: var(--texto-fraco);
-  font-family: var(--mono);
-  font-size: 0.7rem;
-}
-
 .scroll-cue:first-letter {
   color: var(--texto);
 }
+/*-----------------------------------------------------*/
 
-/* Sobre */
+
+/* SOBRE */
 .about-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(240px, 0.6fr);
@@ -418,8 +394,10 @@ section.section-shell:not(.hero) {
   font-family: var(--mono);
   font-size: 0.7rem;
 }
+/*-----------------------------------------------------*/
 
-/* Projetos */
+
+/* PROJETOS */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -499,8 +477,10 @@ section.section-shell:not(.hero) {
 .text-link:hover {
   color: var(--texto-fraco);
 }
+/*-----------------------------------------------------*/
 
-/* Habilidades */
+
+/* HABILIDADES */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -546,8 +526,10 @@ section.section-shell:not(.hero) {
   color: var(--texto);
   content: "·";
 }
+/*-----------------------------------------------------*/
 
-/* Contato */
+
+/* CONTATO */
 .contact-section {
   margin-top: 1rem;
   padding-block: 4rem;
@@ -647,7 +629,6 @@ section.section-shell:not(.hero) {
   outline-offset: 0;
 }
 
-/* Feedback nativo: erro visível após interação do usuário. */
 .form-field input:user-invalid,
 .form-field textarea:user-invalid {
   border-color: #999;
@@ -674,8 +655,10 @@ section.section-shell:not(.hero) {
   color: var(--texto-fraco);
   font-size: 0.68rem;
 }
+/*-----------------------------------------------------*/
 
-/* Rodapé */
+
+/* FOOTER */
 .site-footer {
   max-width: var(--largura);
   min-height: 80px;
@@ -698,8 +681,13 @@ section.section-shell:not(.hero) {
   font-family: var(--mono);
   font-size: 0.68rem;
 }
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
 
-/* Responsividade */
+
+
+
+/* RESPONSIVIDADE */
 @media (max-width: 850px) {
   body {
     padding-inline: 1.5rem;
